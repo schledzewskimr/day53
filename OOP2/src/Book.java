@@ -9,6 +9,19 @@ public class Book {
         this.year = year;
     }
 
+    public Book(String title, int year) {
+        this.title = title;
+        this.year = year;
+    }
+
+    public Book(String title) {
+        this.title = title;
+    }
+    
+    public Book() {
+        
+    }
+
     public String title() {
         return title;
     }
