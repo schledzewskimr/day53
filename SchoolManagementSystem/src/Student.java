@@ -29,8 +29,69 @@ public class Student {
     public void setGrade(int grade) {
         this.grade = grade;
     }
-
-    public void updateFeesPaid(int fees) {
-        
+    
+    /**
+     * keep adding the fees to feesPaid Field
+     * add the fees to the fees paid
+     * the school is going to receive the funds.
+     * 
+     * @param fees that the student pays
+     */
+    public void payFees(int fees) {
+        feesPaid += fees;
+        School.updateTotalMoneyEarned(feesPaid);
     }
+
+    /**
+     * 
+     * @return id of the student
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * 
+     * @return name of the student
+     */
+    public String name() {
+        return name;
+    }
+
+    /**
+     * 
+     * @return grade of the student.
+     */
+    public int getGrade() {
+        return grade;
+    }
+
+    /**
+     * 
+     * @return fees paid by the student
+     */
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    /**
+     * 
+     * @return total fees owed by the student
+     */
+    public int getFeesTotal() {
+        return feesTotal;
+    }
+
+    /**
+     * 
+     * @return remaining fees owed.
+     */
+    public int getRemainingFees() {
+        return feesTotal - feesPaid;
+    }
+    
+    public String toString() {
+        return "Student's name : " + name + "\nTotal fees paid so far: $" + feesPaid;
+    }
+
 }
